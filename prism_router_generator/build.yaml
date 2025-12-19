@@ -1,0 +1,17 @@
+targets:
+  $default:
+    builders:
+      prism_router_generator|prism_router_builder:
+        generate_for:
+          - lib/**.dart
+
+builders:
+  prism_router_builder:
+    import: "package:prism_router_generator/prism_router_generator.dart"
+    builder_factories: ["prismRouterBuilder"]
+    build_extensions: {".dart": [".prism_router.g.part"]}
+    auto_apply: dependents
+    build_to: source
+    applies_builders: ["source_gen|combining_builder"]
+
+

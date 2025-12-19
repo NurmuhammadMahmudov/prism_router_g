@@ -1,0 +1,22 @@
+name: prism_router_generator
+description: Code generator for prism_router (auto_route-like annotations).
+version: 0.1.0
+homepage: https://github.com/nurmuhammad0126/prism_router
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  analyzer: ">=6.0.0 <6.9.0"
+  build: ^2.4.1
+  source_gen: ^1.5.0
+  prism_router_annotations:
+    path: ../prism_router_annotations
+
+dev_dependencies:
+  build_runner: ^2.4.13
+  build_test: ^2.2.2
+  lints: ^5.0.0
+  test: ^1.25.8
+
+

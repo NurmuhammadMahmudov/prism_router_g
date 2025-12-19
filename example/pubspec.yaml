@@ -1,0 +1,31 @@
+name: example
+description: "A new Flutter project."
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  prism_router:
+    path: ../
+  prism_router_annotations:
+    path: ../prism_router_annotations
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  build_runner: ^2.4.13
+  prism_router_generator:
+    path: ../prism_router_generator
+
+flutter:
+  uses-material-design: true
