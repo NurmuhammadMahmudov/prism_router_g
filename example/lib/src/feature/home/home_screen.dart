@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:prism_router/prism_router.dart';
 import 'package:prism_router_annotations/prism_router_annotations.dart';
 
-import '../../../app_router.dart';
+import '../../common/routes/app_router.dart';
 
 PrismStateObserver? prismStateObserver;
 
@@ -88,6 +88,23 @@ class _HomeScreenState extends State<HomeScreen> {
               onTap: () => context.push(ProfilePage()),
             ),
             _NavigationTile(
+              icon: Icons.person,
+              title: 'Push profile',
+              subtitle: 'Simple page that can open details',
+              onTap: () => context.push(MarketPage()),
+            ),
+            _NavigationTile(
+              icon: Icons.person,
+              title: 'Push profile',
+              subtitle: 'Simple page that can open details',
+              onTap:
+                  () => context.push(
+                    SettingsPage2(
+                      data: 'Updated @ ${DateTime.now().toIso8601String()}',
+                    ),
+                  ),
+            ),
+            _NavigationTile(
               icon: Icons.description,
               title: 'Push details',
               subtitle: 'Pass data arguments & show tag-based back handling',
@@ -131,3 +148,4 @@ class _NavigationTile extends StatelessWidget {
     ),
   );
 }
+

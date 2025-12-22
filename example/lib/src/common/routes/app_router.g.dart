@@ -51,6 +51,24 @@ final class HomePage extends PrismPage {
   PrismPage pageBuilder(Map<String, Object?> arguments) => fromArgs(arguments);
 }
 
+final class MarketPage extends PrismPage {
+  MarketPage({LocalKey? pageKey})
+      : super(
+          name: 'market',
+          child: MarketScreen(),
+          arguments: const <String, Object?>{},
+          tags: null,
+          key: pageKey,
+        );
+
+  static PrismPage fromArgs(Map<String, Object?> arguments) {
+    return MarketPage();
+  }
+
+  @override
+  PrismPage pageBuilder(Map<String, Object?> arguments) => fromArgs(arguments);
+}
+
 final class ProfilePage extends PrismPage {
   ProfilePage({LocalKey? pageKey})
       : super(
@@ -108,11 +126,47 @@ final class SettingsPage extends PrismPage {
   }
 }
 
+final class SettingsPage2 extends PrismPage {
+  SettingsPage2({required this.data, LocalKey? pageKey})
+      : super(
+          name: 'settings2',
+          child: SettingsScreen2(data: data),
+          arguments: <String, Object?>{'data': data},
+          tags: const <String>{'settings2'},
+          key: pageKey,
+        );
+
+  final String data;
+
+  static PrismPage fromArgs(Map<String, Object?> arguments) {
+    if (arguments case {'data': String data}) {
+      return SettingsPage2(data: data);
+    }
+    return SettingsPage2(data: (arguments['data'] as String?) ?? '');
+  }
+
+  @override
+  PrismPage pageBuilder(Map<String, Object?> arguments) => fromArgs(arguments);
+
+  @override
+  Route<void> createRoute(BuildContext context) {
+    return PageRouteBuilder<void>(
+      settings: this,
+      pageBuilder: (context, animation, secondaryAnimation) => child,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        return FadeTransition(opacity: animation, child: child);
+      },
+    );
+  }
+}
+
 final List<PrismRouteDefinition> appRoutes = <PrismRouteDefinition>[
   PrismRouteDefinition(name: 'details', builder: DetailsPage.fromArgs),
   PrismRouteDefinition(name: 'home', builder: HomePage.fromArgs),
+  PrismRouteDefinition(name: 'market', builder: MarketPage.fromArgs),
   PrismRouteDefinition(name: 'profile', builder: ProfilePage.fromArgs),
   PrismRouteDefinition(name: 'settings', builder: SettingsPage.fromArgs),
+  PrismRouteDefinition(name: 'settings2', builder: SettingsPage2.fromArgs),
 ];
 
 final List<PrismPage> initialStack = <PrismPage>[

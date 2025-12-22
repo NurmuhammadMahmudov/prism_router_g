@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:prism_router/prism_router.dart';
 import 'package:prism_router_annotations/prism_router_annotations.dart';
 
-import '../../../app_router.dart';
+import '../../common/routes/app_router.dart';
 
 /// {@template details_screen}
 /// Light-weight screen that showcases reading data passed through the page.

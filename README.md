@@ -288,6 +288,16 @@ part 'app_router.g.dart';
 class AppRouter {}
 ```
 
+**Tip (optional): auto-import screens**
+
+Because `app_router.g.dart` is generated as a Dart `part`, it can’t declare its
+own imports. If you don’t want to keep adding screen imports manually, you can
+instead add a **single** generated import (created by codegen):
+
+```dart
+import 'app_router.imports.g.dart';
+```
+
 ### 3) Annotate your screens
 
 ```dart

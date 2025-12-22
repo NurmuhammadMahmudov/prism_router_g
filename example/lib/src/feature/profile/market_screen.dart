@@ -8,14 +8,14 @@ import '../../common/routes/app_router.dart';
 /// Demonstrates pushing another page and removing itself via `pop`.
 /// {@endtemplate}
 @PrismRoute()
-class ProfileScreen extends StatelessWidget {
+class MarketScreen extends StatelessWidget {
   /// {@macro profile_screen}
-  const ProfileScreen({super.key});
+  const MarketScreen({super.key});
 
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
-      title: const Text('Profile'),
+      title: const Text('MArket'),
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: context.pop,

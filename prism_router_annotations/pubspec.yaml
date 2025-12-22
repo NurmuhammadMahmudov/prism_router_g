@@ -2,6 +2,7 @@ name: prism_router_annotations
 description: Annotations for prism_router code generation.
 version: 0.1.0
 homepage: https://github.com/nurmuhammad0126/prism_router
+publish_to: none
 
 environment:
   sdk: ^3.7.2
