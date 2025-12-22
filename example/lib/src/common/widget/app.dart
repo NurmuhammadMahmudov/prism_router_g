@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prism_router/prism_router.dart';
 
-import '../../../app_router.dart';
+import '../routes/app_router.dart';
 
 /// {@template app}
 /// App widget.
@@ -28,10 +28,7 @@ class _AppState extends State<App> {
       (context, state) => state.isEmpty ? <PrismPage>[HomePage()] : state,
     ];
 
-    _routerConfig = buildPrismRouterConfig(
-      webHistoryMode: PrismWebHistoryMode.replace,
-      guards: guards,
-    );
+    _routerConfig = buildPrismRouterConfig(guards: guards);
   }
 
   @override

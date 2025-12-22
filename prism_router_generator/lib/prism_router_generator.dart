@@ -9,4 +9,8 @@ import 'src/prism_router_generator.dart';
 Builder prismRouterBuilder(BuilderOptions options) =>
     SharedPartBuilder([PrismRouterGenerator()], 'prism_router');
 
+/// Generates `<router>.imports.g.dart` files (barrel exports for screens).
+Builder prismRouterImportsBuilder(BuilderOptions options) =>
+    LibraryBuilder(PrismRouterImportsGenerator(), generatedExtension: '.imports.g.dart');
+
 
